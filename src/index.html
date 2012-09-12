@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head profile="http://microformats.org/profile/hcard">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+				<meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+				<script type="text/html">
+					<div class="entry">
+						<h3 id="post-ITTERATOR">
+							<a href="URL HERE">TITLE HERE</a>
+						</h3>
+					</div>
+				</script>
+				<style type="text/css">
+				div.rss {
+						float: right;
+						margin-right: 10px;
+				    width:            20px;
+						height:           20px;
+						background-image: url('data:image/png;base64,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');
+						}
+				#logo {
+					border-width: 2px;
+					border-style:solid;
+					background: url('img/The Building Blocks.png') no-repeat;
+					background-size: 567px 992px;
+					position: absolute;
+					width: 420px;
+					height: 860px;
+					left: -148px;
+					top: -130px;
+				}
+				#content {
+					border-width: 2px;
+					border-style:solid;
+					position: absolute;
+					left: 300px;
+					width: 600px;
+					height: 800px;
+				}
+				#content #home-title {
+					border-width: 2px;
+					border-style:solid;
+					margin-left: 35%;
+				}
+            #posts {
+                width: 500px;
+                color: #4C4C4C;
+                margin: 0 60px 0 0;
+                float: left;
+            }
+                
+            #posts .post {
+                list-style-type: none;
+                border-bottom: 1px solid #E6E6E6;
+                margin: 0 0 45px 0;
+                padding: 0 0 45px 0;
+            }
+				#sidebar {
+					border-width: 2px;
+					border-style:solid;
+					position: absolute;
+					left: 900px;
+					width: 400px;
+					height: 800px;
+				}
+				#contact {
+					border-width: 2px;
+					border-style:solid;
+					position: absolute;
+					bottom: 20px;
+					left: 41%;
+				}
+				#copyright {
+					border-width: 2px;
+					border-style:solid;
+					position: absolute;
+					bottom: 5px;
+					left: 42%;
+					font-family: 'Times New Roman', Times, serif;
+					text-transform: uppercase;
+					font-size: 12px;
+					letter-spacing: 2px;
+				}
+
+			#posts img {
+				max-width: 500px;
+			</style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+	<div>
+		<div id="logo"></div>
+		<div id="content">
+			<h2 id="home-title">
+				<a href="{RSS}" title="link to RSS feed" id="feed-link">
+					<div class="rss"></div>
+				</a>
+				Lean and Lasting
+			</h2>
+            <ul id="posts">
+                {block:Posts}
+                        <li class="post group" {block:IfShowPostNotes} {block:PostNotes} style="padding:0"{/block:PostNotes} {/block:IfShowPostNotes}>  
+                    
+                        {block:Photo}
+                            <section class="top media">
+                                 {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"> {LinkCloseTag}{Question}
+                            </section>
+                        {/block:Photo}
+                        
+                        {block:Photoset}
+                            <section class="top media photoset">
+                                {Photoset-700}
+                            </section>
+                        {/block:Photoset}
+                        
+                        {block:Link}
+                            <section class="top link_post">
+                                <a href="{URL}" class="link">{Name}<span class="arrow"></span></a>
+                            </section>
+                        {/block:Link}
+                        
+                        {block:Audio}
+                            <section class="top audio">
+                            {AudioPlayerBlack}
+                            </section>
+                        {/block:Audio}
+                        
+                        {block:Video}
+                            <section class="top media">
+                                {Video-700}
+                            </section>
+                        {/block:Video}
+                    
+                        <section class="group caption_and_post_info
+                            {block:Photo} after_top_part isphoto{/block:Photo}
+                            {block:Photoset} after_top_part isphoto{/block:Photoset}
+                            {block:Link} after_top_part islink{/block:Link}
+                            {block:Audio} after_top_part isaudio{/block:Audio}
+                            {block:Video} after_top_part isvideo{/block:Video}
+                        ">
+                            {block:Text}
+                                <section class="caption group">
+                                    {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                                    <div class="cont group">{Body}</div>
+                                    {block:ContentSource}
+                                        <div class="cont content_source">
+                                            <a href="{SourceURL}">
+                                                {lang:Source}:
+                                                {block:SourceLogo}
+                                                    <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                                {/block:SourceLogo}
+                                                {block:NoSourceLogo}
+                                                    {SourceTitle}
+                                                {/block:NoSourceLogo}
+                                            </a>
+                                        </div>
+                                    {/block:ContentSource}
+                                </section>
+                            {/block:Text}
+
+                            {block:Answer}
+                                <section class="caption group">
+                                    <div class="cont group">
+
+                                        <div class="question bubble">
+                                            {Question}
+                                            <span class="arrow border"></span>
+                                            <span class="arrow fill"></span>
+                                        </div>
+                                        <div class="asker group">
+                                            <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
+                                        </div>
+                                        <div class="answer cont">{Answer}</div>
+                                    </div>
+                                    {block:ContentSource}
+                                        <div class="cont content_source">
+                                            <a href="{SourceURL}">
+                                                {lang:Source}:
+                                                {block:SourceLogo}
+                                                    <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                                {/block:SourceLogo}
+                                                {block:NoSourceLogo}
+                                                    {SourceTitle}
+                                                {/block:NoSourceLogo}
+                                            </a>
+                                        </div>
+                                    {/block:ContentSource}
+                                </section>
+                            {/block:Answer}
+                            
+                            {block:Photo}
+                                <section class="caption group">
+                                    {block:Caption}
+                                        <div class="cont">{Caption}</div>
+                                    {/block:Caption}
+                                    {block:ContentSource}
+                                        <div class="cont content_source">
+                                            <a href="{SourceURL}">
+                                                {lang:Source}:
+                                                {block:SourceLogo}
+                                                    <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                                {/block:SourceLogo}
+                                                {block:NoSourceLogo}
+                                                    {SourceTitle}
+                                                {/block:NoSourceLogo}
+                                            </a>
+                                        </div>
+                                    {/block:ContentSource}
+                                </section>
+                            {/block:Photo}
+
+                            {block:Photoset}
+                                <section class="caption group">
+                                    {block:Caption}
+                                        <div class="cont">{Caption}</div>
+                                    {/block:Caption}
+                                    {block:ContentSource}
+                                        <div class="cont content_source">
+                                            <a href="{SourceURL}">
+                                                {lang:Source}:
+                                                {block:SourceLogo}
+                                                    <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                                {/block:SourceLogo}
+                                                {block:NoSourceLogo}
+                                                    {SourceTitle}
+                                                {/block:NoSourceLogo}
+                                            </a>
+                                        </div>
+                                    {/block:ContentSource}
+                                </section>
+                            {/block:Photoset}
+                            
+                            {block:Quote}
+                                    <section class="caption group">
+                                        <section class="quote {Length}_text {block:IfUseLargerFontForQuotes}larger_text{/block:IfUseLargerFontForQuotes}"><span>“</span>{Quote}”</section>
+                                        {block:Source}
+                                            <div class="cont quote_source">&mdash; {Source}</div>
+                                        {/block:Source}
+                                        {block:ContentSource}
+                                            <div class="cont content_source">
+                                                <a href="{SourceURL}">
+                                                    {lang:Source}:
+                                                    {block:SourceLogo}
+                                                        <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                                    {/block:SourceLogo}
+                                                    {block:NoSourceLogo}
+                                                        {SourceTitle}
+                                                    {/block:NoSourceLogo}
+                                                </a>
+                                            </div>
+                                        {/block:ContentSource}
+                                    </section>
+                            {/block:Quote}
+                            
+                            {block:Link}
+                                {block:Description}
+                                    <section class="caption group">
+                                        <div class="cont">{Description}</div>
+                                        {block:ContentSource}
+                                            <div class="cont content_source">
+                                                <a href="{SourceURL}">
+                                                    {lang:Source}:
+                                                    {block:SourceLogo}
+                                                        <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                                    {/block:SourceLogo}
+                                                    {block:NoSourceLogo}
+                                                        {SourceTitle}
+                                                    {/block:NoSourceLogo}
+                                                </a>
+                                            </div>
+                                        {/block:ContentSource}
+                                    </section>
+                                {/block:Description}
+                            {/block:Link}
+                            
+                            {block:Chat}
+                                <section class="caption group">
+                                    {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                                    <ul class="conversation">
+                                        {block:Lines}
+                                            <li class="chat_line user{UserNumber}">
+                                                {block:Label}
+                                                    <strong>{Label}</strong>&nbsp;&nbsp;
+                                                {/block:Label}
+                                                {Line}
+                                            </li>
+                                        {/block:Lines}
+                                    </ul>
+                                    {block:ContentSource}
+                                        <div class="cont content_source">
+                                            <a href="{SourceURL}">
+                                                {lang:Source}:
+                                                {block:SourceLogo}
+                                                    <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                                {/block:SourceLogo}
+                                                {block:NoSourceLogo}
+                                                    {SourceTitle}
+                                                {/block:NoSourceLogo}
+                                            </a>
+                                        </div>
+                                    {/block:ContentSource}
+                                </section>
+                            {/block:Chat}
+
+                            {block:Audio}
+                                {block:Caption}
+                                    <section class="caption group">
+                                        <div class="cont">{Caption}</div>
+                                        {block:ContentSource}
+                                            <div class="cont content_source">
+                                                <a href="{SourceURL}">
+                                                    {lang:Source}:
+                                                    {block:SourceLogo}
+                                                        <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                                    {/block:SourceLogo}
+                                                    {block:NoSourceLogo}
+                                                        {SourceTitle}
+                                                    {/block:NoSourceLogo}
+                                                </a>
+                                            </div>
+                                        {/block:ContentSource}
+                                    </section>
+                                {/block:Caption}
+                            {/block:Audio}
+                            
+                            {block:Video}
+                                <section class="caption group">
+                                {block:Caption}
+                                    <div class="cont">{Caption}</div>
+                                {/block:Caption}
+                                {block:ContentSource}
+                                    <div class="cont content_source">
+                                        <a href="{SourceURL}">
+                                            {lang:Source}:
+                                            {block:SourceLogo}
+                                                <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                            {/block:SourceLogo}
+                                            {block:NoSourceLogo}
+                                                {SourceTitle}
+                                            {/block:NoSourceLogo}
+                                        </a>
+                                    </div>
+                                {/block:ContentSource}
+                                </section>
+                            {/block:Video}
+
+                            <ul class="
+                                post_info
+                                {block:IfPlaceTimestampInLeftColumn}
+                                    {block:Text} floating{/block:Text}
+                                    {block:Answer} floating{/block:Answer}
+                                    {block:Photo}{block:Caption} floating{/block:Caption}{/block:Photo}
+                                    {block:Photo}{block:ContentSource} floating{/block:ContentSource}{/block:Photo}
+                                    {block:Photoset}{block:Caption} floating{/block:Caption}{/block:Photoset}
+                                    {block:Photoset}{block:ContentSource} floating{/block:ContentSource}{/block:Photoset}
+                                    {block:Quote} floating{/block:Quote}
+                                    {block:Link}{block:Description} floating{/block:Description}{/block:Link}
+                                    {block:Link}{block:ContentSource} floating{/block:ContentSource}{/block:Link}
+                                    {block:Chat} floating{/block:Chat}
+                                    {block:Audio}{block:Caption} floating{/block:Caption}{/block:Audio}
+                                    {block:Audio}{block:ContentSource} floating{/block:ContentSource}{/block:Audio}
+                                    {block:Video}{block:Caption} floating{/block:Caption}{/block:Video}
+                                    {block:Video}{block:ContentSource} floating{/block:ContentSource}{/block:Video}
+                                {/block:IfPlaceTimestampInLeftColumn}
+                            ">
+                                <li><a href="{Permalink}" class="
+                                    timestamp
+                                    {block:Text}has_caption{block:Title} with_title{/block:Title}{/block:Text}
+                                    {block:Photo}{block:Caption}has_caption{/block:Caption}{/block:Photo}
+                                    {block:Photoset}{block:Caption}has_caption{/block:Caption}{/block:Photoset}
+                                    
+                                    {block:Quote}
+                                        {block:Source}
+                                            {Length}_quote
+                                        {/block:Source}
+                                    {/block:Quote}
+                                    
+                                    {block:Link}{block:Description}has_caption{/block:Description}{/block:Link}
+                                    {block:Chat}chat{block:Title} with_title{/block:Title}{/block:Chat}
+                                    {block:Audio}{block:Caption}has_caption{/block:Caption}{/block:Audio}
+                                    {block:Video}{block:Caption}has_caption{/block:Caption}{/block:Video}
+                                ">{block:IndexPage}{TimeAgo}{/block:IndexPage}{block:PermalinkPage}{block:Date}{Month} {DayOfMonth}, {Year} ({12Hour}:{Minutes} {AmPm}){/block:Date}{/block:PermalinkPage}</a></li>{block:PermalinkPage}{block:HasTags}{/block:HasTags}{/block:PermalinkPage}
+
+                                {block:IfShowPostNotes}
+                                    {block:NoteCount}
+                                       <li><a class="notecount" href="{Permalink}#notes">{NoteCount} notes</a></li>
+                                   {/block:NoteCount}
+                                {/block:IfShowPostNotes}
+
+                                {block:IfShowTags}
+                                    {block:Tags}
+                                        <li><a class="tag" href="{TagURL}"><span>#</span>{Tag}</a></li>
+                                    {/block:Tags}
+                                {/block:IfShowTags}
+                                </ul>
+                                {block:PostNotes}
+                                    <section class="post_notes">
+                                        <a name="notes">
+                                            {PostNotes}
+                                        </a>
+                                    </section>
+                                {/block:PostNotes}
+
+                                </section>
+                    </li>
+                {/block:Posts}
+            </ul>
+		</div>
+		<div id="sidebar">
+                {block:IfShowBlogDescription}{block:Description}<div class="cont description group">{Description}</div>{/block:Description}{/block:IfShowBlogDescription}
+                
+                {block:HasPages}
+                    <ul class="links">
+                        {block:Pages}
+                            <li><a href="{URL}">{Label}</a></li>
+                        {/block:Pages}
+                    </ul>
+                {/block:HasPages}
+                
+                <ul class="links" style="display:none;{block:AskEnabled} display:block;{/block:AskEnabled}{block:SubmissionsEnabled} display:block;{/block:SubmissionsEnabled}">
+                    {block:AskEnabled}<li><a href="/ask" class="ask"><span class="icon"></span>We willen jou interviewen</a></li>{/block:AskEnabled}
+                    {block:SubmissionsEnabled}<li><a href="/submit" class="submit"><span class="icon"></span>Deel iets met ons</a></li>{/block:SubmissionsEnabled}
+                </ul>
+
+                <ul class="links">
+                    <li>
+				<a href="{RSS}" title="link to RSS feed" id="feed-link">
+				blijf op de hoogte
+					<div class="rss"></div>
+				</a>
+										</li>
+                    <li><a href="/archive" class="archive"><span class="icon"></span>archive</a></li>
+                </ul>
+                
+                {block:Twitter}
+                    <aside id="twitter_container" style="display:none"></aside>
+                    
+                    <script type="text/javascript">
+                        function recent_tweets(data) {
+                            document.getElementById("twitter_container").innerHTML =
+                            document.getElementById("twitter_container").innerHTML +
+                            '<a class="bubble" href="http://twitter.com/{TwitterUsername}/status/' +
+                            (data[0].id_str ? data[0].id_str : data[0].id) +
+                            '">' + data[0].text +
+                            '<span class="arrow border"></span><span class="arrow fill"></span></a>' +
+                            '<a href="twitter.com/{TwitterUsername}" class="twitter_username">@{TwitterUsername}</a>';
+
+                            document.getElementById("twitter_container").style.display = 'block';
+                        }
+                    </script>
+                {/block:Twitter}
+		</div>
+		<div id="contact" class="vcard">
+			<span class="tel">
+				<span class="type">work</span>:
+				<span class="value">+1</span>.<span class="value">415</span>.<span class="value">555</span>.<span class="value">1212</span></span>
+			</span>
+		</div>
+		<div id="copyright" class="vcard">
+		  &#169; 2012 <a class="fn org url" href="http://www.leanandlasting.com/?utm_source=site&utm_medium=footer&utm_campaign=title">Lean and Lasting</a>
+		</div>
+	</div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-34762627-1'],['_trackPageview']];
+	    _gaq.push(['_setAllowLinker', true]);
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
