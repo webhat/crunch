@@ -46,15 +46,10 @@
 					z-index: -1;
 					border-width: 0px;
 					border-style:solid;
-					position: absolute;
-					left: 300px;
-					width: 600px;
-					height: 800px;
 				}
 				#content #home-title {
 					border-width: 0px;
 					border-style:solid;
-					margin-left: 35%;
 				}
 				#preorder, #ordertrain {
 					z-index: 30;
@@ -70,19 +65,22 @@
 				#ss-form1, #ss-form2 {
 					margin: 20px;
 				}
-            #posts {
-                width: 500px;
-                color: #4C4C4C;
-                margin: 0 60px 0 0;
-                float: left;
-            }
-                
-            #posts .post {
-                list-style-type: none;
-                border-bottom: 1px solid #E6E6E6;
-                margin: 0 0 45px 0;
-                padding: 0 0 45px 0;
-            }
+				#posts {
+						position: relative;
+						width: 550px;
+						color: #4C4C4C;
+						float: left;
+						padding-left: 0px;
+				}
+						
+				#posts .post {
+						list-style-type: none;
+						border-bottom: 1px solid #E6E6E6;
+						background: #ecece2 url(http://static.tumblr.com/ro5gmuq/ZSSkkujk0/ko3lqkpvh62h949njlofkumx_400.jpg) top repeat-x;
+						margin: 0 auto;
+						width: 540px;
+						border-bottom: 6px #c45d30 solid;
+				}
 				#sidebar {
 					border-width: 0px;
 					border-style:solid;
@@ -108,10 +106,121 @@
 					text-transform: uppercase;
 					font-size: 12px;
 					letter-spacing: 2px;
+					margin: 0px auto;
 				}
-
 			#posts img {
 				max-width: 500px;
+			}
+			#pagewrap {
+				margin:0px 0px 0px 20%;
+				width:550px;
+				float:left;
+			}
+			#content {
+				background: #92300d url(http://static.tumblr.com/ro5gmuq/svQkkujej/ko3lqkpvh62htiqhpwkcr0nd_400.jpg);
+			}
+			#content h1 {
+				background: #bc3d0e url(http://static.tumblr.com/ro5gmuq/TOgkkujgf/ko3lqkpvh62hu3ae5ip11zpj_400.jpg);
+				margin: 0 auto;
+				width: 540px;
+			}
+			#content h1 a {
+				background: url(http://static.tumblr.com/rlw59xo/Esel1n1hd/title.png) no-repeat center 20px;
+				color: #111;
+				display: block;
+				height: 200px;
+				text-decoration: none;
+			}
+			#header h1 a:hover {
+				color: #666;
+			}
+			#content h1 a span {
+				display: table-cell;
+				height: 200px;
+				padding-left: 170px;
+				vertical-align: middle;
+				width: 200px;
+			 font-size:0.8em;
+			}
+			#header h1 a em {
+				display: block;
+				font-size: 0.8em;
+				font-style: normal;
+			}
+			h1, h2, h3, h4, h5, .post.quote blockquote, .permalink p, .source, #footer {
+				font-family: "GillSans", "Gill Sans", Helvetica;
+				letter-spacing: 0.14em;
+				margin: 0 0px 0.8em;
+				text-align: center;
+				text-shadow: #fff 0 0 0;
+				text-transform: uppercase;
+			}
+			#pagewrap .permalink {
+				font-size: 12px;
+				position: relative;
+				background: #92300d url(http://static.tumblr.com/ro5gmuq/svQkkujej/ko3lqkpvh62htiqhpwkcr0nd_400.jpg);
+				width: 550px;
+				bottom -1px;
+			}
+			#pagewrap .permalink .wrapper {
+				background: #bc3d0e url(http://static.tumblr.com/ro5gmuq/TOgkkujgf/ko3lqkpvh62hu3ae5ip11zpj_400.jpg);
+				padding: 0 15px;
+				margin: 0px auto;
+				width: 510px;
+				height: 110px;
+			}
+			#pagewrap .permalink p {
+				font-size: 0.7em;
+				margin: 0 auto;
+				width: 300px;
+				overflow: hidden;
+				text-align: right;
+				padding: 1em 0;
+			}
+			#posts {
+				background: #d4d4cb url(http://static.tumblr.com/ro5gmuq/e0ykkujj3/ko3lqkpvh62hchwniinby4mr_400.jpg) top repeat-x;
+				margin-top: 0px;
+				list-style-type: none;
+			}
+			body {
+				line-height: 1;
+				color: black;
+				background: url(http://static.tumblr.com/ro5gmuq/vUhkkujdc/cardboard.gif) fixed;
+				font: normal 0.875em/1.4 Palatino, Georgia, "Times New Roman", serif;
+			}
+			.links {
+				list-style-type:none;
+			}
+			#frontpage {
+				margin: 0 auto;
+				width: 300px !important;
+				height: 300px;
+								background-color: #e2e3de;
+			}
+#fpsee {
+	background-image: url(img/see.jpg);
+	width: 150px;
+	height: 150px;
+	float:left;
+}
+#fpdo {
+	background-image: url(img/do.jpg);
+	width: 150px;
+	height: 150px;
+	float:right;
+}
+#fpwant {
+	background-image: url(img/want.jpg);
+	width: 150px;
+	height: 150px;
+	float:right;
+}
+#fphave {
+	background-image: url(img/have.jpg);
+	width: 150px;
+	height: 150px;
+	float:left;
+}
 			</style>
     </head>
     <body>
@@ -120,16 +229,23 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-	<div>
+	<div id="pagewrap">
 		<div id="logo" style="background-image: url(https://raw.github.com/webhat/crunch/develop/src/img/The%20Building%20Blocks.png) !important;"></div>
 		<div id="content">
-			<h2 id="home-title">
+			<h1 id="home-title">
 				<a href="{RSS}" title="link to RSS feed" id="feed-link">
-					<div class="rss"></div>
+					<span>{Title}</span>
 				</a>
-				Lean and Lasting
-			</h2>
+			</h1>
             <ul id="posts">
+							<li class="post">
+								<div id="frontpage">
+									<div id="fpsee"></div>
+									<div id="fpdo"></div>
+									<div id="fpwant"></div>
+									<div id="fphave"></div>
+								</div>
+							</li>
                 {block:Posts}
                         <li class="post group" {block:IfShowPostNotes} {block:PostNotes} style="padding:0"{/block:PostNotes} {/block:IfShowPostNotes}>  
                     
@@ -395,23 +511,7 @@
                                     {block:Video}{block:ContentSource} floating{/block:ContentSource}{/block:Video}
                                 {/block:IfPlaceTimestampInLeftColumn}
                             ">
-                                <li><a href="{Permalink}" class="
-                                    timestamp
-                                    {block:Text}has_caption{block:Title} with_title{/block:Title}{/block:Text}
-                                    {block:Photo}{block:Caption}has_caption{/block:Caption}{/block:Photo}
-                                    {block:Photoset}{block:Caption}has_caption{/block:Caption}{/block:Photoset}
-                                    
-                                    {block:Quote}
-                                        {block:Source}
-                                            {Length}_quote
-                                        {/block:Source}
-                                    {/block:Quote}
-                                    
-                                    {block:Link}{block:Description}has_caption{/block:Description}{/block:Link}
-                                    {block:Chat}chat{block:Title} with_title{/block:Title}{/block:Chat}
-                                    {block:Audio}{block:Caption}has_caption{/block:Caption}{/block:Audio}
-                                    {block:Video}{block:Caption}has_caption{/block:Caption}{/block:Video}
-                                ">{block:IndexPage}{TimeAgo}{/block:IndexPage}{block:PermalinkPage}{block:Date}{Month} {DayOfMonth}, {Year} ({12Hour}:{Minutes} {AmPm}){/block:Date}{/block:PermalinkPage}</a></li>{block:PermalinkPage}{block:HasTags}{/block:HasTags}{/block:PermalinkPage}
+																{block:PermalinkPage}{block:HasTags}{/block:HasTags}{/block:PermalinkPage}
 
                                 {block:IfShowPostNotes}
                                     {block:NoteCount}
@@ -421,7 +521,7 @@
 
                                 {block:IfShowTags}
                                     {block:Tags}
-                                        <li><a class="tag" href="{TagURL}"><span>#</span>{Tag}</a></li>
+                                        <li><a class="tag" href="{TagURL}"><img width="20" height="20" src="img/{Tag}.jpg" alt="{Tag}"></a></li>
                                     {/block:Tags}
                                 {/block:IfShowTags}
                                 </ul>
@@ -436,35 +536,47 @@
                                 </section>
                     </li>
                 {/block:Posts}
+		<div class="permalink">
+			<div class="wrapper">
+				<p>
+					<a href="{Permalink}" title="{lang:Permalink}">
+						<span>Complete</span>
+					</a>
+							{block:Tags}
+									<!--a class="tag" href="{TagURL}"><img width="40" height="40" src="img/see.jpg" alt="{Tag}"></a-->
+									<a class="tag" href="{TagURL}"><img width="40" height="40" src="img/{Tag}.jpg" alt="{Tag}"></a>
+							{/block:Tags}
+					<a href="{Permalink}" title="{lang:Permalink}">
+						<span class="right">Unabridged</span>
+					</a>
+		<div id="copyright" class="vcard">
+		  &#169; 2012 <a class="fn org url" href="http://www.leanandlasting.com/?utm_source=site&utm_medium=footer&utm_campaign=title">lean and lasting</a>
+		</div>
+				</p>
+			</div>
+		</div>
             </ul>
 		</div>
 		<div id="sidebar">
                 {block:IfShowBlogDescription}{block:Description}<div class="cont description group">{Description}</div>{/block:Description}{/block:IfShowBlogDescription}
                 
-                {block:HasPages}
-                    <ul class="links">
-                        {block:Pages}
-                            <li><a href="{URL}">{Label}</a></li>
-                        {/block:Pages}
-                    </ul>
-                {/block:HasPages}
-                
                 <ul class="links" style="display:none;{block:AskEnabled} display:block;{/block:AskEnabled}{block:SubmissionsEnabled} display:block;{/block:SubmissionsEnabled}">
-                    {block:AskEnabled}<li><a href="/ask" class="ask"><span class="icon"></span>We willen jou interviewen</a></li>{/block:AskEnabled}
-                    {block:SubmissionsEnabled}<li><a href="/submit" class="submit"><span class="icon"></span>Deel iets met ons</a></li>{/block:SubmissionsEnabled}
+                    <li><a href="/archive" class="archive"><span class="icon"></span>Articles and Interviews</a></li>
+                    {block:AskEnabled}<li><a href="/ask" class="ask"><span class="icon"></span>Get Interviewed</a></li>{/block:AskEnabled}
+                    <li><a href="#" id="ordertrainlink" class="archive"><span class="icon"></span>Organize your Workshop</a></li>
+                    <li><a href="#" id="ordertrainlink" class="archive"><span class="icon"></span>Get Coaching</a></li>
+                    {block:SubmissionsEnabled}<li><a href="/submit" class="submit"><span class="icon"></span>Share with Us</a></li>{/block:SubmissionsEnabled}
                 </ul>
 
-                <ul class="links">
+                <!--ul class="links">
                     <li>
 				<a href="{RSS}" title="link to RSS feed" id="feed-link">
 				blijf op de hoogte
 					<div class="rss"></div>
 				</a>
 										</li>
-                    <li><a href="/archive" class="archive"><span class="icon"></span>archive</a></li>
                     <li><a href="#" id="preorderlink" class="archive"><span class="icon"></span>het boek voorbestellen</a></li>
-                    <li><a href="#" id="ordertrainlink" class="archive"><span class="icon"></span>bestel een training</a></li>
-                </ul>
+                </ul!-->
                 
                 {block:Twitter}
                     <aside id="twitter_container" style="display:none"></aside>
@@ -521,15 +633,6 @@
 
 		<div class="ss-item ss-navigate"><div class="ss-form-entry">
 		<input type="submit" name="submit" value="Submit"></div></div></form>
-		</div>
-		<div id="contact" class="vcard">
-			<span class="tel">
-				<span class="type">work</span>:
-				<span class="value">+1</span>.<span class="value">415</span>.<span class="value">555</span>.<span class="value">1212</span></span>
-			</span>
-		</div>
-		<div id="copyright" class="vcard">
-		  &#169; 2012 <a class="fn org url" href="http://www.leanandlasting.com/?utm_source=site&utm_medium=footer&utm_campaign=title">Lean and Lasting</a>
 		</div>
 	</div>
 
