@@ -38,7 +38,7 @@
 					position: absolute;
 					width: 420px;
 					height: 860px;
-					left: -148px;
+					left: -450px;
 					top: -130px;
 					z-index: -1;
 				}
@@ -52,6 +52,7 @@
 					border-style:solid;
 				}
 				#preorder, #ordertrain {
+					display: none;
 					z-index: 30;
 					border-color: red;
 					border-width: 5px;
@@ -80,6 +81,10 @@
 						margin: 0 auto;
 						width: 540px;
 						border-bottom: 6px #c45d30 solid;
+				}
+				#posts .group {
+				}
+				#frontpage div {
 				}
 				#sidebar {
 					border-width: 0px;
@@ -115,6 +120,8 @@
 				margin:0px 0px 0px 20%;
 				width:550px;
 				float:left;
+				top:0px;
+position:absolute;
 			}
 			#content {
 				background: #92300d url(http://static.tumblr.com/ro5gmuq/svQkkujej/ko3lqkpvh62htiqhpwkcr0nd_400.jpg);
@@ -191,34 +198,40 @@
 			.links {
 				list-style-type:none;
 			}
+			.links li a:link {
+				text-decoration: none;
+			}
+			.links li a:visited {
+				text-decoration: none;
+		 	}
 			#frontpage {
 				margin: 0 auto;
-				width: 300px !important;
-				height: 300px;
-								background-color: #e2e3de;
+				width: 320px !important;
+				height: 320px;
+				background-color: #e2e3de;
 			}
 #fpsee {
-	background-image: url(img/see.jpg);
-	width: 150px;
-	height: 150px;
+	background-image: url(https://raw.github.com/webhat/crunch/develop/src/img/see.jpg);
+	width: 160px;
+	height: 160px;
 	float:left;
 }
 #fpdo {
-	background-image: url(img/do.jpg);
-	width: 150px;
-	height: 150px;
+	background-image: url(https://raw.github.com/webhat/crunch/develop/src/img/do.jpg);
+	width: 160px;
+	height: 160px;
 	float:right;
 }
 #fpwant {
-	background-image: url(img/want.jpg);
-	width: 150px;
-	height: 150px;
+	background-image: url(https://raw.github.com/webhat/crunch/develop/src/img/want.jpg);
+	width: 160px;
+	height: 160px;
 	float:right;
 }
 #fphave {
-	background-image: url(img/have.jpg);
-	width: 150px;
-	height: 150px;
+	background-image: url(https://raw.github.com/webhat/crunch/develop/src/img/have.jpg);
+	width: 160px;
+	height: 160px;
 	float:left;
 }
 			</style>
@@ -233,18 +246,46 @@
 		<div id="logo" style="background-image: url(https://raw.github.com/webhat/crunch/develop/src/img/The%20Building%20Blocks.png) !important;"></div>
 		<div id="content">
 			<h1 id="home-title">
-				<a href="{RSS}" title="link to RSS feed" id="feed-link">
+				<a href="/" title="link to RSS feed" id="feed-link">
 					<span>{Title}</span>
 				</a>
 			</h1>
             <ul id="posts">
-							<li class="post">
+							<li class="post headers">
 								<div id="frontpage">
-									<div id="fpsee"></div>
-									<div id="fpdo"></div>
-									<div id="fpwant"></div>
-									<div id="fphave"></div>
+									<div id="fpsee"><div style="display:none;background-color:yellow;margin-right: 4px;">See projectmanagement from different angles and share your view on projectmanagement
+										<ul class="links">
+											<li><a href="#see">Read articles and interviews</a></li>
+											<li><a href'/post/32192157180/meld-je-aan-voor-een-interview'>Get interviewed</li>
+											<li>Get training</li>
+										</ul>
+									</div></div>
+									<div id="fpwant"><div style="display:none;background-color:yellow;margin-right: 4px;">Develop a shared vision with clear priorities in one of our vision development trainings
+										<ul class="links">
+											<li>Organize your shared vision development training</li>
+											<li><a href="#want">Read articles and interviews about shared vision development</a></li>
+										</ul>
+									</div></div>
+									<div id="fpdo"><div style="display:none;background-color:yellow;margin-right: 4px;">Our hands-on Project Coaching and “Unblock you Project” workshop will get your project back on track
+										<ul class="links">
+											<li>Get coaching</li>
+											<li>Organize your workshop</li>
+											<li><a href="#do">Use the experience and tools of others to attain your goals</a></li>
+										</ul>
+									</div></div>
+									<div id="fphave"><div style="display:none;background-color:yellow;margin-right: 4px;">Learn to grow the results you have by getting feedback
+										<ul class="links">
+										<li>Organize your feedback training</li>
+										<li><a href="#have">Use the experience and tools of others to learn faster</a></li>
+										</ul>
+									</div></div>
 								</div>
+							</li>
+							<li id="tagindex" class="post">
+								<div id="fpseetag"></div>
+								<div id="fpwanttag"></div>
+								<div id="fpdotag"></div>
+								<div id="fphavetag"></div>
 							</li>
                 {block:Posts}
                         <li class="post group" {block:IfShowPostNotes} {block:PostNotes} style="padding:0"{/block:PostNotes} {/block:IfShowPostNotes}>  
@@ -638,12 +679,13 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="https://raw.github.com/webhat/crunch/develop/src/js/vendor/jquery.timeago.js"></script>
+        <script src="https://raw.github.com/webhat/crunch/develop/src/js/vendor/jquery.ba-hashchange.min.js"></scripot>
+        <script src="https://raw.github.com/webhat/crunch/develop/src/js/plugins.js"></script>
+        <script src="https://raw.github.com/webhat/crunch/develop/src/js/main.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready( function() {
-			$("#preorder").hide();
 			$("#preorderlink").bind('click', function() {
 				$("#preorder").show();
 				$("#ordertrain").hide();
@@ -652,7 +694,6 @@
 				$("#preorder").hide();
 			});
 
-			$("#ordertrain").hide();
 			$("#ordertrainlink").bind('click', function() {
 				$("#ordertrain").show();
 				$("#preorder").hide();
@@ -662,7 +703,84 @@
 			});
 		});
 	</script>
-        <script>
+	<script>
+		$(document).ready(function() {
+				$('#frontpage>div').bind('click', function() {
+					// animate
+					var margin = 0;
+					console.log('click '+ this.id);
+					$(this).siblings().children().css({ fontSize: "", marginLeft: "", width: "", fontSize: "", borderWidth: "" }).hide();
+					switch(this.id) {
+						case 'fphave':
+						case 'fpsee':
+							margin = '-2.5in';
+							break;
+						case 'fpdo':
+						case 'fpwant':
+							margin = '2in';
+							break;
+					}
+					$(this).children().animate({
+							width: "70%",
+							opacity: 'toggle',
+							marginLeft: margin,
+							fontSize: "1em",
+							borderWidth: "0px",
+							width: "250px"
+					}, 700 );
+
+				});
+		});
+	function hashing(hash) {
+				switch( hash) {
+					case "":
+					case "#":
+						$('.post>#frontpage').show();
+						$('#tagindex').hide();
+						$('#posts>.group').hide();
+						break;
+					case '#see':
+						$('.post>#frontpage').hide();
+						$('#tagindex').children().hide();
+						$('#tagindex').show();
+						$('#fpseetag').show();
+						$('#posts>.group').hide();
+						break;
+					case '#want':
+						$('.post>#frontpage').hide();
+						$('#tagindex').children().hide();
+						$('#tagindex').show();
+						$('#fpwanttag').show();
+						$('#posts>.group').hide();
+						break;
+					case '#do':
+						$('.post>#frontpage').hide();
+						$('#tagindex').children().hide();
+						$('#tagindex').show();
+						$('#fpdotag').show();
+						$('#posts>.group').hide();
+						break;
+					case '#have':
+						$('.post>#frontpage').hide();
+						$('#tagindex').show();
+						$('#tagindex').children().hide();
+						$('#fphavetag').show();
+						$('#posts>.group').hide();
+						break;
+					default:
+						$('#posts>.group').show();
+						$('.post>#frontpage').hide();
+						$('#tagindex').hide();
+				}
+	}
+		$(window).hashchange(function (event) {
+		    hashing(location.hash);
+		});
+		$(document).ready( function() {
+		    hashing(location.hash);
+		});
+	</script>
+	<script>
 		$(document).ready( function() {
 			$('#ss-form1').submit(function() {
 				$("#ss-form1").append("<p style='color:brown'>Dank je wel voor de bestelling, er zal zo gauw mogelijk contact worden opgenomen.</p>");
@@ -672,6 +790,21 @@
 			});
 		});
 	</script>
+	<script>
+		function tumblr(data) {
+			$.each(data.response.posts, function (i, item) {
+				var date = new Date(item.date);
+				item.utc = date.toISOString().replace(new RegExp("\.[0-9][0-9][0-9]Z$"), "-00:00Z");
+				$.each(item.tags, function( i, tag) {
+					var article = $("<div />");
+					$("#fp"+ tag +"tag").append(article);
+					article.append($("<span><a href='"+ item.post_url +"'>"+ item.title +"</a></span>"));
+				});
+			});
+		}
+	</script>
+	<script src="http://api.tumblr.com/v2/blog/leanandlasting.tumblr.com/posts/text?notes_info=true&limit=11&jsonp=tumblr&api_key=SutZQLUpLTsnkMVKxeEBUEp0W1QKCMurWDbWuXmmCS58gvlXLE"></script>
+	<script src="js/vendor/tumblr.json"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-34762627-1'],['_trackPageview']];
