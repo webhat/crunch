@@ -84,7 +84,7 @@
 				}
 				#posts .group {
 				}
-				#frontpage div {
+				.post #frontpage {
 				}
 				#sidebar {
 					border-width: 0px;
@@ -732,6 +732,8 @@ position:absolute;
 				});
 		});
 	function hashing(hash) {
+				if( location.pathname != "/")
+					hash = "#article";
 				switch( hash) {
 					case "":
 					case "#":
