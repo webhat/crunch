@@ -14,7 +14,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+        <script src="https://raw.github.com/webhat/crunch/develop/src/js/vendor/modernizr-2.6.1.min.js"></script>
 				<script type="text/html">
 					<div class="entry">
 						<h3 id="post-ITTERATOR">
@@ -75,6 +75,7 @@
 				}
 						
 				#posts .post {
+	min-height: 650px;
 						list-style-type: none;
 						border-bottom: 1px solid #E6E6E6;
 						background: #ecece2 url(http://static.tumblr.com/ro5gmuq/ZSSkkujk0/ko3lqkpvh62h949njlofkumx_400.jpg) top repeat-x;
@@ -83,6 +84,7 @@
 						border-bottom: 6px #c45d30 solid;
 				}
 				#posts .group {
+					display: hidden;
 				}
 				.post #frontpage {
 				}
@@ -90,7 +92,8 @@
 					border-width: 0px;
 					border-style:solid;
 					position: absolute;
-					left: 900px;
+					left: 600px;
+					top:75%;
 					width: 400px;
 					height: 800px;
 				}
@@ -234,6 +237,9 @@ position:absolute;
 	height: 160px;
 	float:left;
 }
+#tagindex {
+	font-size: 160%;
+}
 			</style>
     </head>
     <body>
@@ -243,7 +249,6 @@ position:absolute;
 
         <!-- Add your site or application content here -->
 	<div id="pagewrap">
-		<div id="logo" style="background-image: url(https://raw.github.com/webhat/crunch/develop/src/img/The%20Building%20Blocks.png) !important;"></div>
 		<div id="content">
 			<h1 id="home-title">
 				<a href="/" title="link to RSS feed" id="feed-link">
@@ -251,41 +256,11 @@ position:absolute;
 				</a>
 			</h1>
             <ul id="posts">
-							<li class="post headers">
-								<div id="frontpage">
-									<div id="fpsee"><div style="display:none;background-color:yellow;margin-right: 4px;">See projectmanagement from different angles and share your view on projectmanagement
-										<ul class="links">
-											<li><a href="#see">Read articles and interviews</a></li>
-											<li><a href'/post/32192157180/meld-je-aan-voor-een-interview'>Get interviewed</li>
-											<li>Get training</li>
-										</ul>
-									</div></div>
-									<div id="fpwant"><div style="display:none;background-color:yellow;margin-right: 4px;">Develop a shared vision with clear priorities in one of our vision development trainings
-										<ul class="links">
-											<li>Organize your shared vision development training</li>
-											<li><a href="#want">Read articles and interviews about shared vision development</a></li>
-										</ul>
-									</div></div>
-									<div id="fpdo"><div style="display:none;background-color:yellow;margin-right: 4px;">Our hands-on Project Coaching and “Unblock you Project” workshop will get your project back on track
-										<ul class="links">
-											<li>Get coaching</li>
-											<li>Organize your workshop</li>
-											<li><a href="#do">Use the experience and tools of others to attain your goals</a></li>
-										</ul>
-									</div></div>
-									<div id="fphave"><div style="display:none;background-color:yellow;margin-right: 4px;">Learn to grow the results you have by getting feedback
-										<ul class="links">
-										<li>Organize your feedback training</li>
-										<li><a href="#have">Use the experience and tools of others to learn faster</a></li>
-										</ul>
-									</div></div>
-								</div>
-							</li>
 							<li id="tagindex" class="post">
-								<div id="fpseetag"></div>
-								<div id="fpwanttag"></div>
-								<div id="fpdotag"></div>
-								<div id="fphavetag"></div>
+								<div id="see"></div>
+								<div id="want"></div>
+								<div id="do"></div>
+								<div id="have"></div>
 							</li>
                 {block:Posts}
                         <li class="post group" {block:IfShowPostNotes} {block:PostNotes} style="padding:0"{/block:PostNotes} {/block:IfShowPostNotes}>  
@@ -330,7 +305,17 @@ position:absolute;
                             {block:Text}
                                 <section class="caption group">
                                     {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
-                                    <div class="cont group">{Body}</div>
+                                    <div class="cont group"><div id="asking" style="display:none;">Please tell us about you.
+																	 	<ul>
+																			<li>What's your name?</li>
+																			<li>What's your position?</li>
+																			<li>In which sector do you work?</li>
+																			<li>What Project Management techniques do you use?</li>
+																			<li>Which PM techniques do you find most effective?</li>
+																			<li>What challenges do you face?</li>
+																			<li>How do you overcome them?</li>
+																		</ul>
+																		And most importantly tell us how we can best reach you.</div>{Body}</div>
                                     {block:ContentSource}
                                         <div class="cont content_source">
                                             <a href="{SourceURL}">
@@ -350,7 +335,6 @@ position:absolute;
                             {block:Answer}
                                 <section class="caption group">
                                     <div class="cont group">
-
                                         <div class="question bubble">
                                             {Question}
                                             <span class="arrow border"></span>
@@ -602,11 +586,16 @@ position:absolute;
                 {block:IfShowBlogDescription}{block:Description}<div class="cont description group">{Description}</div>{/block:Description}{/block:IfShowBlogDescription}
                 
                 <ul class="links" style="display:none;{block:AskEnabled} display:block;{/block:AskEnabled}{block:SubmissionsEnabled} display:block;{/block:SubmissionsEnabled}">
-                    <li><a href="/archive" class="archive"><span class="icon"></span>Articles and Interviews</a></li>
-                    {block:AskEnabled}<li><a href="/ask" class="ask"><span class="icon"></span>Get Interviewed</a></li>{/block:AskEnabled}
+                    <li><a href="/#do" class="archive"><span class="icon"></span>Interviews</a></li>
+                    <li><a href="/#have" class="archive"><span class="icon"></span>Tools & Practice</a></li>
+                    <li><a href="/#see" class="archive"><span class="icon"></span>Opinion & Theory</a></li>
+                    <li><a href="#" id="preorderlink" class="archive"><span class="icon"></span>Pre-order our Book</a></li>
+										<!--
                     <li><a href="#" id="ordertrainlink" class="archive"><span class="icon"></span>Organize your Workshop</a></li>
                     <li><a href="#" id="ordertrainlink" class="archive"><span class="icon"></span>Get Coaching</a></li>
-                    {block:SubmissionsEnabled}<li><a href="/submit" class="submit"><span class="icon"></span>Share with Us</a></li>{/block:SubmissionsEnabled}
+										-->
+                    {block:AskEnabled}<li><a href="/ask" class="ask"><span class="icon"></span>Get Interviewed</a></li>{/block:AskEnabled}
+                    {block:SubmissionsEnabled}<li><a href="/submit" class="submit"><span class="icon"></span>Share something with us</a></li>{/block:SubmissionsEnabled}
                 </ul>
 
                 <!--ul class="links">
@@ -616,7 +605,6 @@ position:absolute;
 					<div class="rss"></div>
 				</a>
 										</li>
-                    <li><a href="#" id="preorderlink" class="archive"><span class="icon"></span>het boek voorbestellen</a></li>
                 </ul!-->
                 
                 {block:Twitter}
@@ -661,12 +649,15 @@ position:absolute;
 		<form target="hideme" action="https://docs.google.com/spreadsheet/formResponse?formkey=dFNLb2I1Qkt4S18wN2sxZkVRT2FwdlE6MQ&ifq" method="POST" id="ss-form2">
 		<br>
 		<div class="errorbox-good">
-		<div class="ss-item  ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_0">Vul hier je adres in om op de lijst to komen voor een eerste editie.
+		<div class="ss-item  ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_0">Enter your details to preorder the book, and get a signed first edition.
 		</label>
 		<br />
 		<br />
-		<label class="ss-q-help" for="entry_0"></label>
-		<input type="text" name="entry.0.single" value="" class="ss-q-short" id="entry_0"></div></div></div>
+		<label class="ss-q-help" for="entry_1">Name</label>
+		<input type="text" name="entry.1.single" value="" class="ss-q-short" id="entry_1"></div>
+		<br />
+		<label class="ss-q-help" for="entry_0">Email</label>
+		<input type="text" name="entry.0.single" value="" class="ss-q-short" id="entry_0"></div>
 		<br />
 		<input type="hidden" name="pageNumber" value="0">
 		<input type="hidden" name="backupCache" value="">
@@ -704,70 +695,25 @@ position:absolute;
 		});
 	</script>
 	<script>
-		$(document).ready(function() {
-				$('#frontpage>div').bind('click', function() {
-					// animate
-					var margin = 0;
-					console.log('click '+ this.id);
-					$(this).siblings().children().css({ fontSize: "", marginLeft: "", width: "", fontSize: "", borderWidth: "" }).hide();
-					switch(this.id) {
-						case 'fphave':
-						case 'fpsee':
-							margin = '-2.5in';
-							break;
-						case 'fpdo':
-						case 'fpwant':
-							margin = '2in';
-							break;
-					}
-					$(this).children().animate({
-							width: "70%",
-							opacity: 'toggle',
-							marginLeft: margin,
-							fontSize: "1em",
-							borderWidth: "0px",
-							width: "250px"
-					}, 700 );
-
-				});
-		});
 	function hashing(hash) {
+				if( location.pathname == "/ask")
+					$("#asking").show();
 				if( location.pathname != "/")
 					hash = "#article";
 				switch( hash) {
 					case "":
 					case "#":
-						$('.post>#frontpage').show();
-						$('#tagindex').hide();
+						$('.post>#frontpage').hide();
+						$('#tagindex').children().show();
+						$('#tagindex').show();
 						$('#posts>.group').hide();
 						break;
-					case '#see':
-						$('.post>#frontpage').hide();
-						$('#tagindex').children().hide();
-						$('#tagindex').show();
-						$('#fpseetag').show();
+					case "#see":
+					case "#do":
+					case "#have":
 						$('#posts>.group').hide();
-						break;
-					case '#want':
-						$('.post>#frontpage').hide();
 						$('#tagindex').children().hide();
-						$('#tagindex').show();
-						$('#fpwanttag').show();
-						$('#posts>.group').hide();
-						break;
-					case '#do':
-						$('.post>#frontpage').hide();
-						$('#tagindex').children().hide();
-						$('#tagindex').show();
-						$('#fpdotag').show();
-						$('#posts>.group').hide();
-						break;
-					case '#have':
-						$('.post>#frontpage').hide();
-						$('#tagindex').show();
-						$('#tagindex').children().hide();
-						$('#fphavetag').show();
-						$('#posts>.group').hide();
+						$(hash).show();
 						break;
 					default:
 						$('#posts>.group').show();
@@ -785,10 +731,10 @@ position:absolute;
 	<script>
 		$(document).ready( function() {
 			$('#ss-form1').submit(function() {
-				$("#ss-form1").append("<p style='color:brown'>Dank je wel voor de bestelling, er zal zo gauw mogelijk contact worden opgenomen.</p>");
+				$("#ss-form1").append("<p style='color:brown'>Thank you for leaving your details, you are at the top of our list.</p>");
 			});
 			$('#ss-form2').submit(function() {
-				$("#ss-form2").append("<p style='color:brown'>Dank je wel voor de bestelling, er zal zo gauw mogelijk contact worden opgenomen.</p>");
+				$("#ss-form2").append("<p style='color:brown'>Thank you for leaving your details, you are at the top of our list.</p>");
 			});
 		});
 	</script>
@@ -799,7 +745,7 @@ position:absolute;
 				item.utc = date.toISOString().replace(new RegExp("\.[0-9][0-9][0-9]Z$"), "-00:00Z");
 				$.each(item.tags, function( i, tag) {
 					var article = $("<div />");
-					$("#fp"+ tag +"tag").append(article);
+					$("#"+ tag).append(article);
 					article.append($("<span><a href='"+ item.post_url +"'>"+ item.title +"</a></span>"));
 				});
 			});
