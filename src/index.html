@@ -12,8 +12,8 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://raw.github.com/webhat/crunch/develop/src/css/normalize.css">
+        <link rel="stylesheet" href="https://raw.github.com/webhat/crunch/develop/src/css/main.css">
         <script src="https://raw.github.com/webhat/crunch/develop/src/js/vendor/modernizr-2.6.1.min.js"></script>
 				<script type="text/html">
 					<div class="entry">
@@ -742,11 +742,11 @@ position:absolute;
 		function tumblr(data) {
 			$.each(data.response.posts, function (i, item) {
 				var date = new Date(item.date);
-				item.utc = date.toISOString().replace(new RegExp("\.[0-9][0-9][0-9]Z$"), "-00:00Z");
+				//item.utc = date.toISOString().replace(new RegExp("\.[0-9][0-9][0-9]Z$"), "-00:00Z");
 				$.each(item.tags, function( i, tag) {
 					var article = $("<div />");
 					$("#"+ tag).append(article);
-					article.append($("<span><a href='"+ item.post_url +"'>"+ item.title +"</a></span>"));
+					article.append($("<h3><a href='"+ item.post_url +"'>"+ item.title +"</a></h3>"));
 				});
 			});
 		}
