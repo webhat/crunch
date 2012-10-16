@@ -86,6 +86,12 @@
 				#posts .group {
 					display: hidden;
 				}
+				.group section {
+					margin-left: 10px;
+					margin-right: 10px;
+					text-align:justify;
+					text-justify:inter-word;
+				}
 				.post #frontpage {
 				}
 				#sidebar {
@@ -157,13 +163,18 @@ position:absolute;
 				font-size: 0.8em;
 				font-style: normal;
 			}
-			h1, h2, h3, h4, h5, .post.quote blockquote, .permalink p, .source, #footer {
-				font-family: "GillSans", "Gill Sans", Helvetica;
-				letter-spacing: 0.14em;
+			h1, h2, h4, h3, .post.quote blockquote, .permalink p, .source, #footer {
+				font-family: "Arial";
+				letter-spacing: 0em;
 				margin: 0 0px 0.8em;
 				text-align: center;
 				text-shadow: #fff 0 0 0;
-				text-transform: uppercase;
+			}
+			h5 {
+				font-family: "Arial";
+				letter-spacing: 0em;
+				margin: 0 0px 0.4em;
+				text-shadow: #fff 0 0 0;
 			}
 			#pagewrap .permalink {
 				font-size: 12px;
@@ -201,11 +212,15 @@ position:absolute;
 			.links {
 				list-style-type:none;
 			}
-			.links li a:link {
+			.links li a:link, h5 a, h2 a {
 				text-decoration: none;
+				font-weight: normal;
+				color: #4C4C4C;
 			}
-			.links li a:visited {
+			.links li a:visited, h5 a, h2 a {
 				text-decoration: none;
+				font-weight: normal;
+				color: #4C4C4C;
 		 	}
 			#frontpage {
 				margin: 0 auto;
@@ -240,6 +255,9 @@ position:absolute;
 #tagindex {
 	font-size: 160%;
 }
+#tagindex div {
+	margin-left: 10px;
+}
 			</style>
     </head>
     <body>
@@ -257,6 +275,7 @@ position:absolute;
 			</h1>
             <ul id="posts">
 							<li id="tagindex" class="post">
+								<div id="blank">&nbsp;</div>
 								<div id="see"></div>
 								<div id="want"></div>
 								<div id="do"></div>
@@ -744,14 +763,15 @@ position:absolute;
 				var date = new Date(item.date);
 				//item.utc = date.toISOString().replace(new RegExp("\.[0-9][0-9][0-9]Z$"), "-00:00Z");
 				$.each(item.tags, function( i, tag) {
+					console.log(item.title);
 					var article = $("<div />");
-					$("#"+ tag).append(article);
-					article.append($("<h3><a href='"+ item.post_url +"'>"+ item.title +"</a></h3>"));
+					$("#"+ tag).prepend(article);
+					article.prepend($("<h5><a href='"+ item.post_url +"'>"+ item.title +"</a></h5>"));
 				});
 			});
 		}
 	</script>
-	<script src="http://api.tumblr.com/v2/blog/leanandlasting.tumblr.com/posts/text?notes_info=true&limit=11&jsonp=tumblr&api_key=SutZQLUpLTsnkMVKxeEBUEp0W1QKCMurWDbWuXmmCS58gvlXLE"></script>
+	<script src="http://api.tumblr.com/v2/blog/leanandlasting.tumblr.com/posts/text?notes_info=true&limit=100&jsonp=tumblr&api_key=SutZQLUpLTsnkMVKxeEBUEp0W1QKCMurWDbWuXmmCS58gvlXLE"></script>
 	<script src="js/vendor/tumblr.json"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
