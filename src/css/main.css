@@ -94,6 +94,43 @@ textarea {
    ========================================================================== */
 
 
+<<<<<<< HEAD
+=======
+	#logo {
+			border-width: 0px;
+			border-style:solid;
+			background: url('../img/The Building Blocks.png') no-repeat;
+			background-size: 567px 992px;
+			position: absolute;
+			width: 420px;
+			height: 860px;
+			left: 100px;
+			top: -50px;
+			z-index: -1;
+	}
+
+	h1 {text-align:right;}
+	h2 {text-align:left;}
+	#titleblock {
+		width: 700px;
+		height: 50px;
+	}
+	#title {
+		width:450px;
+		height: 50px;
+		float:left;
+		vertical-align: middle;
+	}
+	#title a {
+		vertical-align: middle;
+	}
+	#branch {
+		width:200px;
+		height: 50px;
+		float:right;
+		vertical-align: middle;
+	}
+>>>>>>> release/1.0
 
 
 
