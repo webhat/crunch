@@ -97,7 +97,7 @@ textarea {
 	#logo {
 			border-width: 0px;
 			border-style:solid;
-			background: url('../img/The Building Blocks.png') no-repeat;
+			background: url('https://raw.github.com/webhat/crunch/develop/src/img/The Building Blocks.png') no-repeat;
 			background-size: 567px 992px;
 			position: absolute;
 			width: 420px;
@@ -105,6 +105,28 @@ textarea {
 			left: 100px;
 			top: -50px;
 			z-index: -1;
+	}
+
+	#data {
+			position: absolute;
+			width: 420px;
+			height: 860px;
+			left: 520px;
+			top: 100px;
+			z-index: -1;
+	}
+
+	#pmhave {
+	}
+
+	#pmdo {
+		margin-top: 80px;
+	}
+
+	#pmwant {
+	}
+
+	#pmsee {
 	}
 
 	h1 {text-align:right;}
