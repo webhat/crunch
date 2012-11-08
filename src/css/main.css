@@ -97,7 +97,7 @@ textarea {
 	#logo {
 			border-width: 0px;
 			border-style:solid;
-			background: url('https://raw.github.com/webhat/crunch/develop/src/img/The Building Blocks.png') no-repeat;
+background: url('https://raw.github.com/webhat/crunch/develop/src/img/The%20Building%20Blocks.png') no-repeat;
 			background-size: 567px 992px;
 			position: absolute;
 			width: 420px;
@@ -107,27 +107,32 @@ textarea {
 			z-index: -1;
 	}
 
-	#data {
+	#data, #article {
 			position: absolute;
 			width: 420px;
 			height: 860px;
 			left: 520px;
 			top: 100px;
 			z-index: -1;
+			text-align: justify;
 	}
 
-	#pmhave {
-	}
 
-	#pmdo {
-		margin-top: 80px;
-	}
+		#pmhave {
+		}
 
-	#pmwant {
-	}
+		#pmdo {
+			margin-top: 50px;
+		}
 
-	#pmsee {
-	}
+		#pmwant {
+			margin-top: 20px;
+		}
+
+		#pmsee {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
 
 	h1 {text-align:right;}
 	h2 {text-align:left;}
@@ -140,9 +145,14 @@ textarea {
 		height: 50px;
 		float:left;
 		vertical-align: middle;
+		margin-top: -15px;
 	}
 	#title a {
 		vertical-align: middle;
+	}
+	a {
+		text-decoration: none;
+		color: black;
 	}
 	#branch {
 		width:200px;

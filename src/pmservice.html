@@ -13,10 +13,367 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" href="https://raw.github.com/webhat/crunch/develop/src/css/normalize.css">
-        <link rel="stylesheet" href="https://raw.github.com/webhat/crunch/develop/src/css/main.css">
-        <script src="https://raw.github.com/webhat/crunch/develop/src/js/vendor/modernizr-2.6.2.min.js"></script>
-        <script src="https://raw.github.com/webhat/crunch/develop/src/js/vendor/html5-animation.js"></script>
-        <script src="https://raw.github.com/webhat/crunch/develop/src/js/vendor/html5-animation.point3d.js"></script>
+        <link rel="stylesheet" href="https://raw.github.com/webhat/crunch/develop/src/css/main.css" type="text/css">
+        <script src="https://raw.github.com/webhat/crunch/develop/src/js/vendor/modernizr-2.6.1.min.js" type="application/javascript"></script>
+				<style>
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+	#logo {
+			border-width: 0px;
+			border-style:solid;
+			background: url('https://raw.github.com/webhat/crunch/develop/src/img/The%20Building%20Blocks.png') no-repeat;
+			background-size: 378px 661px;
+			position: absolute;
+			width: 420px;
+			height: 860px;
+			left: 100px;
+			top: 50px;
+			z-index: -1;
+	}
+
+	#data {
+			position: absolute;
+			width: 420px;
+			height: 860px;
+			left: 520px;
+			top: 100px;
+			z-index: -1;
+			text-align: justify;
+			font-family:"Arial", Arial, sans-serif;
+	}
+
+		#pmhave {
+			display:none;
+		}
+
+		#pmdo {
+			display:none;
+		}
+
+		#pmwant {
+			display:none;
+		}
+
+		#pmsee {
+			display:none;
+		}
+
+	h1, h2 {
+		text-align:center;
+		font-family:"Arial", Arial, sans-serif;
+		vertical-align: middle;
+	}
+	#titleblock {
+		width: 700px;
+		height: 50px;
+		margin-left:100px;
+	}
+	#title {
+		width:850px;
+		height: 50px;
+		vertical-align: middle;
+		margin-top: -15px;
+		margin-left:-55px;
+	}
+	#title a {
+		vertical-align: middle;
+	}
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	.branch {
+		width:200px;
+		height: 50px;
+		float:right;
+		vertical-align: middle;
+		display: none;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow:none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+				</style>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -24,60 +381,80 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-				<div id="titleblock"><h1 id="title"><a href="/">{Title}</a></h1><h2 id="branch">for XXX</h2></div>
+				<div id="titleblock"><h1 id="title"><a href="/">{Title}</a></h1><h2 class="branch">for XXX</h2><h2>Project management that suits your business</h2></div>
 				<div>
-					<div id="logo"></div>
+					<div id="logo">
+						<div id="clhave" style="position:absolute;width:150px;height:130px;top:90px;left:130px;"></div>
+						<div id="cldo" style="position:absolute;width:150px;height:130px;top:220px;left:110px;"></div>
+						<div id="clwant" style="position:absolute;width:150px;height:130px;top:320px;left:125px;z-index:-1;"></div>
+						<div id="clsee" style="position:absolute;width:150px;height:140px;top:430px;left:100px;z-index:-2;"></div>
+					</div>
 					<div id="data">
-						<div id="pmhave">
+						<div id="article">
+							{block:Posts}
+								{block:Text}
+									<section class="caption group">
+										<div class="cont group">
+											{block:Title}<h3>{Title}</h3>{/block:Title}
+											{Body}
+										</div>
+									</section>
+								{/block:Text}
+							{/block:Posts}
+						</div>
+						<div id="introtext">
+							<p> Lean &amp; Lasting is a project management training and consulting company. We give training and advice on how to best manage projects. We help you create lasting project results in the simplest and leanest way possible. To be effective your project management style has to suit the reality of your business.  </p><p> Select one of the building blocks of project management to learn more about our services and our view on project management.  </p><p> We are working on a book about project management for business people. <a href="http://leanandlasting.tumblr.com/" target="_blank" style="float:right;margin:10px;margin-left:20px;"><img src="https://raw.github.com/webhat/crunch/develop/src/img/lnl-cover-small.png"/></a>Are your projects: too innovative, too international and multi-cultural, too political and change oriented, too uncertain and business oriented? Then this book may drastically change the way you do projects. You can participate in writing this book by registering for an interview or by commenting on the articles and interviews published in our project management notebook.  </p><p> If you are interested in our branch specific trainings for corporate service providers, you can directly visit our training page.  </p>
+						</div>
+						<div id="pmhave" class="pmblocks">
 							<div class="pmtitle">
-								HAVE: YOUR RESULTS
+								<h3>HAVE: YOUR RESULTS</h3>
 							</div>
 							<span>
 								Learn to grow the results you have by getting feedback
 							</span>
 							<ul>
-								<li>Organize your “results and feedback” workshop</li>
+								<li><a href="/workshops/#result">Organize your “results and feedback” workshop</a></li>
 								<li>Learn more</li>
 							</ul>
 						</div>
-						<div id="pmdo">
+						<div id="pmdo" class="pmblocks">
 							<div class="pmtitle">
-								DO: WHAT WORKS
+								<h3>DO: WHAT WORKS</h3>
 							</div>
 							<span>
 								Get hands-on project coaching to get your project back on track
 							</span>
 							<ul>
-								<li>Organize your “unblock my project” workshop</li>
+								<li><a href="/workshops/#unblock">Organize your “unblock my project” workshop</a></li>
 								<li>Get coaching</li>
 								<li>Learn more</li>
 							</ul>
 						</div>
-						<div id="pmwant">
+						<div id="pmwant" class="pmblocks">
 							<div class="pmtitle">
-								WANT: YOUR GOALS
+								<h3>WANT: YOUR GOALS</h3>
 							</div>
 							<span>
 								Develop a shared vision with clear priorities in one of our vision development workshops
 							</span>
 							<ul>
-								<li>Organize your “shared vision development” workshop</li>
+								<li><a href="/workshops/#vision">Organize your “shared vision development” workshop</a></li>
 								<li>Learn more</li>
 							</ul>
 						</div>
-						<div id="pmsee">
+						<div id="pmsee" class="pmblocks">
 							<div class="pmtitle">
-								SEE: YOUR POSSIBILITIES
+								<h3>SEE: YOUR POSSIBILITIES</h3>
 							</div>
 							<span>
 								Learn about project management that suits your business
 							</span>
 							<ul>
-								<li>Organize your “project management that suits your business” workshop</li>
+								<li><a href="/workshops/#suits">Organize your “project management that suits your business” workshop</a></li>
 								<li>Read articles and interviews</li>
 							</ul>
 						</div>
-						<div>
+						<div class="branch">
 							<span>
 						OR SELECT YOUR BRANCH TO LEARN ABOUT OUR BRANCH SPECIFIC SERVICES
 							</span>
@@ -88,12 +465,34 @@
 				<!-- FIXME:
 					https://raw.github.com/webhat/crunch/develop/src/
 				-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-        <script src="https://raw.github.com/webhat/crunch/develop/src/js/plugins.js"></script>
-        <script src="https://raw.github.com/webhat/crunch/develop/src/js/main.js"></script>
+        <script type="application/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script type="application/javascript" src="https://raw.github.com/webhat/crunch/develop/src/js/plugins.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+					if( location.pathname != "/")
+						$("#introtext").hide();
+					$("#logo").bind('click', function() {
+						$("#introtext").hide();
+					});
+					$("#clhave").bind('click', function() {
+							$(".pmblocks").hide();
+							$("#pmhave").show();
+					});
+					$("#cldo").bind('click', function() {
+							$(".pmblocks").hide();
+							$("#pmdo").show();
+					});
+					$("#clsee").bind('click', function() {
+							$(".pmblocks").hide();
+							$("#pmsee").show();
+					});
+					$("#clwant").bind('click', function() {
+							$(".pmblocks").hide();
+							$("#pmwant").show();
+					});
+        </script>
         <script>
             var _gaq=[['_setAccount','UA-34762627-1'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
