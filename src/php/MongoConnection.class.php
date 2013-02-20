@@ -2,6 +2,7 @@
 
 class MongoConnection {
 	protected $db = null;
+	public $mongo = null;
 
 	public function __construct( $user = null) {
 		try {
@@ -12,7 +13,14 @@ class MongoConnection {
 		}
 		$config = new Config();
 		$this->db = $this->mongo->selectDB($config->wtdatabase);
-		//$this->db = $this->mongo->selectDB("wt365");
+	}
+
+	public function setDB( $dbname) {
+		$this->db = $this->mongo->selectDB( $dbname);
+	}
+
+	public function getDB() {
+		return $this->db;
 	}
 }
 ?>
