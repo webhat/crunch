@@ -4,7 +4,7 @@ class QuestionsTest extends PHPUnit_Framework_TestCase {
 	private $questions;
 	private $question;
 	private $questiontext;
-	private $questiongroup;
+	private $questiongroup = "assignmentoracle";
 	private $sieve = "tlhIngan SoH";
 	private $dbname = "klingon";
 
@@ -18,12 +18,12 @@ class QuestionsTest extends PHPUnit_Framework_TestCase {
 
 
 		$this->questiontext = "Sir, are you a Klingon?";
-		$this->questiongroup = "assignmentoracle";
 		$this->question->setQuestionGroup($this->questiongroup);
 	}
 
 	public function tearDown() {
-		$this->questions->getDB()->questions->drop(); 
+//		$this->questions->getDB()->questions->drop(); 
+//		$this->questions->getDB()->answersieve->drop(); 
 	}
 
 	public function testGetQuestions() {
@@ -64,6 +64,17 @@ class QuestionsTest extends PHPUnit_Framework_TestCase {
 			array( "answerid" => "A", "answertext" => "tlhIngan jIH"),
 			array( "answerid" => "B", "answertext" => "No"),
 			);
+	public function testGetAnswers() {
+		$this->question->setAnswers($this->answers);
+		$this->question->updateQuestion($this->questiontext);
+
+		$expected = $this->answers[0]['answertext'];
+
+		$actual = $this->question->getAnswers();
+
+		$this->assertNotNull($actual);
+		$this->assertEquals( $expected, $actual[0]->getanswer());
+	}
 
 	/**
 		* @expectedException QuestionException
@@ -77,17 +88,6 @@ class QuestionsTest extends PHPUnit_Framework_TestCase {
 		$this->question->updateQuestion($this->questiontext);
 	}
 
-	public function testGetAnswers() {
-		$this->question->setAnswers($this->answers);
-		$this->question->updateQuestion($this->questiontext);
-
-		$expected = $this->answers[0]['answertext'];
-
-		$actual = $this->question->getAnswers();
-
-		$this->assertNotNull($actual);
-		$this->assertEquals( $expected, $actual[0]->getanswer());
-	}
 
 	public function testGetAnswerSieve() {
 		$this->answersieve = new AnswerSieve( $this->questiongroup, "A");

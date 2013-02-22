@@ -7,7 +7,10 @@ class Questions extends MongoConnection {
 		if( empty($this->questions)) {
 			$res = $this->getDB()->questions->find( array( "questiongroup" => $qg)); 
 			foreach( $res as $r) {
-				$this->questions[] = new Question( $r['questionid'], $r['questiontext'], $r['questiongroup']); 
+				$question = new Question( $r['questionid'], $r['questiontext'], $r['questiongroup']); 
+				if(array_key_exists( 'answers', $r))
+					$question->setAnswers($r['answers']);
+				$this->questions[] = $question;
 			}
 		}
 		return $this->questions;

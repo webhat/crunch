@@ -24,6 +24,10 @@ class Answer extends Question {
 	public function getId() {
 		return $this->id;
 	}
+
+	public function __toString() {
+		return json_encode(array("answerid" => $this-annswerid, "answertext" => $this->answer));
+	}
 }
 
 ?>
