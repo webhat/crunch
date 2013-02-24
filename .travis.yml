@@ -6,6 +6,7 @@ php:
   - 5.4
 
 script:
+  - sh sh/installsmarty.sh
   - phpunit --configuration .travis_phpunit.xml --coverage-text
   - phantomjs hello.js
 
