@@ -30,7 +30,7 @@ function sendanswers() {
     var answers = "";
     $.ajax({
         type:"POST",
-        url:"../getanswers.php",
+        url:"../getanswers.json.php",
         data:{ "json":JSON.stringify(answers)},
         dataType:"json"
     }).always(function (data) {
