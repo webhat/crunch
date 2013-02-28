@@ -5,7 +5,9 @@ php:
   - 5.3
   - 5.4
 
-script: phpunit --configuration .travis_phpunit.xml --coverage-text
+script:
+  - phpunit --configuration .travis_phpunit.xml --coverage-text
+  - phantomjs hello.js
 
 before_script:
   - pecl -q install mongo && echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`

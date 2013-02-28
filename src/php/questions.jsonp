@@ -1,0 +1,21 @@
+questions([
+              {
+                  "questiontext": "Sir, are you a Klingon?",
+                  "questiongroup": "assignmentoracle",
+                  "id": "A",
+                  "answers": [
+                      {
+                          "answerid": "A",
+                          "answertext": "tlhIngan jIH"
+                      },
+                      {
+                          "answerid": "B",
+                          "answertext": "No"
+                      }
+                  ],
+                  "mongo": {
+                      "connected": true,
+                      "status": null
+                  }
+              }
+          ])
