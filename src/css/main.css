@@ -19,7 +19,7 @@ textarea {
 }
 
 body {
-    font-size: 1em;
+    font-size: 0.8em;
     line-height: 1.4;
 }
 
@@ -145,7 +145,6 @@ background: url('https://raw.github.com/webhat/crunch/develop/src/img/The%20Buil
 		height: 50px;
 		float:left;
 		vertical-align: middle;
-		margin-top: -15px;
 	}
 	#title a {
 		vertical-align: middle;

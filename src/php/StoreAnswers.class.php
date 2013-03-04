@@ -22,11 +22,11 @@ class StoreAnswers extends MongoConnection {
 		$this->setId(md5(time()));
 	}
 
-	private function setId($id) {
+	public function setId($id) {
 		$this->id = $id;
 	}
 
-	private function getId() {
+	public function getId() {
 		if($this->id == "") {
 			$this->generateUniqueID();
 		}

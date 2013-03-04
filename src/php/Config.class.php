@@ -1,5 +1,5 @@
 <?php
 
 class Config {
-	public $wtdatabase = "klingon";
+	public $wtdatabase = "crunch";
 }

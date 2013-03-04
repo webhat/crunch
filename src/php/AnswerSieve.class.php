@@ -5,7 +5,7 @@ class AnswerSieve extends MongoConnection {
 	private $questiongroup;
 	private $answerid;
 
-	public function __construct( $questiongroup, $answerid) {
+	public function __construct( $questiongroup, $answerid = "") {
 		parent::__construct();
 
 		$this->setQuestionGroup( $questiongroup);
@@ -13,7 +13,7 @@ class AnswerSieve extends MongoConnection {
 	}
 
 	public function getAnswerSieveFor( $questiongroup, $answerid) {
-		$res = $this->getDB()->answersieve->findOne( array( "questiongroup" => $questiongroup, "answerid" => $answerid, "answersieve" => array( "\$exists" => true)));
+		$res = $this->getDB()->answersieve->findOne( array( "questiongroup" => $questiongroup, "depends" => $answerid, "answersieve" => array( "\$exists" => true)));
 		return $res['answersieve'];
 	}
 
@@ -23,7 +23,7 @@ class AnswerSieve extends MongoConnection {
 	}
 
 	public function setAnswerSieve( $answersieve) {
-		$res = $this->getDB()->answersieve->update( array( "questiongroup" => $this->getQuestionGroup(), "answerid" => $this->getAnswerId()), array( "questiongroup" => $this->getQuestionGroup(), "answerid" => $this->getAnswerId(), "answersieve" => $answersieve), array( "upsert" => true));
+		$res = $this->getDB()->answersieve->update( array( "questiongroup" => $this->getQuestionGroup(), "depends" => $this->getAnswerId()), array( "questiongroup" => $this->getQuestionGroup(), "depends" => $this->getAnswerId(), "answersieve" => $answersieve), array( "upsert" => true));
 	}
 
 	public function getQuestionGroup() {

@@ -4,23 +4,23 @@ class Question extends MongoConnection {
 
 	public $questiontext = "";
 	public $questiongroup = "";
-	public $id = "";
+	public $questionid = "";
 
 	public $answers = array();
 
-	public function __construct( $id, $qt = "", $qg = "") {
+	public function __construct( $questionid, $qt = "", $qg = "") {
 		parent::__construct();
-		$this->setId($id);
+		$this->setId($questionid);
 		$this->setQuestion($qt);
 		$this->setQuestionGroup($qg);
 	}
 
 	public function getId() {
-		return $this->id;
+		return $this->questionid;
 	}
 
-	public function setId( $id) {
-		$this->id = $id;
+	public function setId( $questionid) {
+		$this->questionid = $questionid;
 	}
 
 	public function getQuestionGroup() {
