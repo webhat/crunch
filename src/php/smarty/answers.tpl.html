@@ -1,6 +1,5 @@
 {include file="smarty/header.tpl.html" title=foo}
 
-	<div id="thanks" style="display:none;position:fixed;background-color:#FF3300;bottom:0px;left:500px;width:500px;height:200px;vertical-align:middle;text-align:center"><br /><br /><br />Thanks for your answers.<br /><br />You will get an email with a link to your results shortly.</div>
     <div id="logo">
         <div id="clhave" style="position:absolute;width:150px;height:130px;top:90px;left:130px;"></div>
         <div id="cldo" style="position:absolute;width:150px;height:130px;top:220px;left:110px;"></div>
@@ -8,12 +7,16 @@
         <div id="clsee" style="position:absolute;width:150px;height:140px;top:430px;left:100px;z-index:-2;"></div>
     </div>
     <div id="data">
+{include file="smarty/intro.tpl.html" title=foo}
 
+    <div id="outro">
+{include file="smarty/outro.tpl.html" title=foo}
+    </div>
     </div>
 </div>
 
 {include file="smarty/scripts.tpl.html" title=foo}
 <script type="text/javascript" src="../../js/questions.js"></script>
-<script type="text/javascript" src="../questions.json.php?callback=questions&id=assignmentoracle"></script>
+<script type="text/javascript" src="../answers.json.php?callback=answersieve&id=assignmentoracle&user={$HASH}"></script>
 
 {include file="smarty/footer.tpl.html" title=foo}

@@ -19,7 +19,13 @@ $message = array(
 		"mail" => $json->mail,
 		"hash" => $uniq
 		);
+
+try {
 $mail->send($message);
+} catch( Exception $e) {
+	print json_encode(array("error" => $uniq));
+	exit;
+}
 
 print json_encode(array("id" => $uniq));
 

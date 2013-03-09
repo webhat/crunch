@@ -94,10 +94,13 @@ textarea {
    ========================================================================== */
 
 
-	#logo {
+#logo {
+	background: url('https://raw.github.com/webhat/crunch/develop/src/img/The%20Building%20Blocks.png') no-repeat;
+}
+
+	#logo, #social {
 			border-width: 0px;
 			border-style:solid;
-background: url('https://raw.github.com/webhat/crunch/develop/src/img/The%20Building%20Blocks.png') no-repeat;
 			background-size: 567px 992px;
 			position: absolute;
 			width: 420px;
@@ -117,6 +120,11 @@ background: url('https://raw.github.com/webhat/crunch/develop/src/img/The%20Buil
 			text-align: justify;
 	}
 
+	#social {
+		top:700px;
+		left: 150px;
+		z-index:0;
+	}
 
 		#pmhave {
 		}
@@ -135,7 +143,11 @@ background: url('https://raw.github.com/webhat/crunch/develop/src/img/The%20Buil
 		}
 
 	h1 {text-align:right;}
-	h2 {text-align:left;}
+	h2 {
+		text-align:right !important;
+		color: #FF3300;
+	}
+
 	#titleblock {
 		width: 700px;
 		height: 50px;
